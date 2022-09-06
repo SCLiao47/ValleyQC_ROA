@@ -202,7 +202,7 @@ function M = func_getQCs(model, QC_type, E)
             M = func_getCrossQC_z(model,E);
             
         case 'Mi_CrossProduct_neg'
-            error('Mi_CrossProduct_neg is now included intp Mi_CrossProduct_z. Please use Mi_CrossProduct_z only');
+            warning('Mi_CrossProduct_neg is now included intp Mi_CrossProduct_z. Please use Mi_CrossProduct_z only');
 %             M = func_getCrossQC_neg(model,E);
             
 		otherwise

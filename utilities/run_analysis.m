@@ -4,7 +4,7 @@
 function exp = run_analysis(model, QCcases, opt)
     ieQCs = QCcases.ieQC;
 
-    numCases = size(ieQCs,1);
+    numCases = length(ieQCs);
     
     rCases = zeros(numCases, 1);
     infoCases = cell(numCases, 1);

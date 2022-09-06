@@ -1,10 +1,15 @@
+clc; clear; close all;
+init;
 
-% loading model
-load('Data\Random3States\Exps8_20220321_2235_EECS.mat')
-exp = ExpList(4);
-model = exp.model;
+%% loading model
+% load('Data\Random3States\Exps8_20220321_2235_EECS.mat')
+% exp = ExpList(4);
+% model = exp.model;
 
-% setting QCs to analyze
+model = model_CDC3States();
+
+%% setting QCs to analyze
+
 ieQCs{1} = {'CS_z'; 'CS_phi'};
 ieQCs{2} = {'CS_z'; 'CS_phi'; 'Valley2_z'; 'Valley2_phi'};
 ieQCs{3} = {'CS_z'; 'CS_phi'; 'Valley3_phi'};
@@ -16,11 +21,15 @@ ieQCs{8} = {'CS_z'; 'CS_phi'; 'Valley2_z'; 'Valley2_phi'; 'Valley3_phi'; 'CrossP
 
 QCcases.ieQC = ieQCs;
 
-% setting options
-opt.options_Shape.Opt_ROA.Nalp = 200;
+%% setting options
+opt.E0 = eye(3);
+opt.niter = 1;
 
-% run analysis
+opt.options_Shape.Opt_ROA = func_getOptions_SDP_ROA(1,-3,200,-6,false);
+opt.options_Shape.verbose = 200;
+
+%% run analysis
 new_exp = run_analysis(model, QCcases, opt);
 
-% display result
+%% display result
 new_exp.r

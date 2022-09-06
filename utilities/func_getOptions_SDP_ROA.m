@@ -1,6 +1,5 @@
 % Function return the option argument for SDPOpt_ROAEstimation
 
-
 function options = func_getOptions_SDP_ROA(alp_max, alp_min, Nalp, eps, verbose)
     if nargin == 0
         alp_max = 0;
