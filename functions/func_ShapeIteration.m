@@ -1,6 +1,6 @@
-% Function to run shaper iteration algorithm (Algorithm A) in [~]
-
-
+% Function to run shaper iteration algorithm (Algorithm A) in [11] A. Kalur, 
+% T. Mushtaq, P. Seiler, and M. S. Hemati, “Estimating regions of attraction 
+% for transitional flows using quadratic constraints,” IEEE Control Systems Letters, 2021.
 
 function [r_final, info_final, r_list, info_list] = func_ShapeIteration(model, eQC_names, ieQC_names, E0, niter, options)
     % check options

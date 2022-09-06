@@ -13,45 +13,42 @@
 clc; clear; close all;
 init;
 
-%% models
+%% models and settins
 createModel = @model_2State;
 createModel_mon = @model_2State_monomial;
+
+%% Largest spherical ROA estimation
+
 
 % create model
 % model = createModel();
 model = createModel_mon();
 
-%% Settings
 % using spherical shape
 E0 = eye(model.nx);
 
-% [Set 1] QCs to use
+%% Shape iteration
 CS_eQC = {};
 CS_ieQC = {'CS_z'};
 
-% [Set 2] QCs to use
 CSValley_eQC = {};
 CSValley_ieQC = {'CS_z';'Valley_z'};
 
-% Optimization options
-niter = 1;
-
+% setting
 options_Opt_ROA = func_getOptions_SDP_ROA(1,-2,201,-6,false);
-options_Opt_ROA.verbose = false;
+options_Opt_ROA.verbose = true;
 
+niter = 1;
 options_Shape.Opt_ROA = options_Opt_ROA;
 options_Shape.verbose = true;
 
-
-%% Run Analysis
-% Set 1:
 disp('===[ CS ShapeIter ]===');
 [r_CS, info_CS, rs_CS, infos_CS] = func_ShapeIteration(model, ...
                                                         CS_eQC, CS_ieQC, ...
                                                         E0, niter, ...
                                                         options_Shape);
 
-% Set 2:
+
 disp('===[ CS_valley ShapeIter ]===');
 [r_CSValley, info_CSValley, rs_CSValley, infos_CSValley] = func_ShapeIteration(model, ...
                                                         CSValley_eQC, CSValley_ieQC, ...
@@ -59,9 +56,10 @@ disp('===[ CS_valley ShapeIter ]===');
                                                         options_Shape);                                             
 
 %% save data
+
 save('ROA_2State');
 save(['Data\ROA_2State\', datestr(now, 'yyyymmdd_HHMM')]);
 
 %% plotting
 
-plotting_2State;
+% plotting_2State;
