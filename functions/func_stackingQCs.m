@@ -34,7 +34,11 @@ function M = func_stackingQCs(M_all, QC_names, QC_type, E)
 					M.tilde = cat(3, M.tilde, Mi.tilde);
 					M.hat = cat(3, M.hat, Mi.hat);
                     
-                    M.L = cat(3, M.L, Mi.L);
+                    if isfield(Mi, 'L')
+                        M.L = cat(3, M.L, Mi.L);
+                    else
+                        M.L = cat(3, M.L, []);
+                    end
 				else
 					warning([QC_names{i}, ' is not in M_all']);
 				end
