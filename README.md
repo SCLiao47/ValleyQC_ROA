@@ -13,7 +13,7 @@ If you find this project is helpful, please cite the following reference:
 
 
 
-
+<!---
 ## To reproduce results
 
 * explain the scripts
@@ -26,3 +26,4 @@ If you find this project is helpful, please cite the following reference:
 
 * QC naming -> equation numbers
 * 
+--->
