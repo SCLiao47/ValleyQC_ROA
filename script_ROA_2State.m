@@ -4,7 +4,8 @@
 
 % [Reference]
 %   [1] A. Kalur, T. Mushtaq, P. Seiler, and M. S. Hemati, “Estimating regions
-% 	of attraction for transitional flows using quadratic constraints,” IEEE
+% 	of attraction for transitional flows using quadratic constraints,”
+% 	IEEEdfgsd
 % 	Control Systems Letters, 2021.
 %   [2] F. Amato, C. Cosentino, and A. Merola, “On the region of asymptotic
 % 	stability of nonlinear quadratic systems,” in 2006 14th Mediterranean
@@ -37,13 +38,15 @@ CSValley_ieQC = {'CS_z';'Valley_z'};
 niter = 1;
 
 options_Opt_ROA = func_getOptions_SDP_ROA(1,-2,201,-6,false);
-options_Opt_ROA.verbose = false;
+options_Opt_ROA.verbose = true;
 
 options_Shape.Opt_ROA = options_Opt_ROA;
 options_Shape.verbose = true;
 
 
 %% Run Analysis
+% r_xx is the ROA estimation size
+
 % Set 1:
 disp('===[ CS ShapeIter ]===');
 [r_CS, info_CS, rs_CS, infos_CS] = func_ShapeIteration(model, ...
@@ -59,9 +62,12 @@ disp('===[ CS_valley ShapeIter ]===');
                                                         options_Shape);                                             
 
 %% save data
-save('ROA_2State');
 save(['Data\ROA_2State\', datestr(now, 'yyyymmdd_HHMM')]);
 
 %% plotting
-
 plotting_2State;
+
+%% Result summary
+fprintf('[Analysis Results] \n');
+fprintf('Set 1: r = %.4f \n', r_CS);
+fprintf('Set 2: r = %.4f \n', r_CSValley);

@@ -88,11 +88,17 @@ cxy = [0,0];
 % Set containment condition: 
 %   x'x <= x'Px <= q*x'x = c 
 
+% from data
+% r_CS = 2.7355;
+% r_CSValley = 3.5224;
+
 % ROA sphere: x'*x = R0^2
-h_ROA_mon_CS = plot_ellipse(2.7349, cxy, Inx, [0 0.4470 0.7410]);
+% h_ROA_mon_CS = plot_ellipse(2.7349, cxy, Inx, [0 0.4470 0.7410]);
+h_ROA_mon_CS = plot_ellipse(r_CS, cxy, Inx, [0 0.4470 0.7410]);
 set(h_ROA_mon_CS,'linewidth',3);
 
-h_ROA_mon_CSValley = plot_ellipse(3.5706, cxy, Inx, [0.4660 0.6740 0.1880]);
+% h_ROA_mon_CSValley = plot_ellipse(3.5706, cxy, Inx, [0.4660 0.6740 0.1880]);
+h_ROA_mon_CSValley = plot_ellipse(r_CSValley, cxy, Inx, [0.4660 0.6740 0.1880]);
 set(h_ROA_mon_CSValley,'linewidth',3);
 hs = [h_ROA_mon_CS; h_ROA_mon_CSValley];
 
@@ -109,4 +115,4 @@ set(hl,'fontsize',16,'location','southeast');
 xlabel('x_1','fontsize',16);
 ylabel('x_2','fontsize',16);
 
-print('Data/figure/MCC/Cases', '-dpng', '-r600')
+print('Data/figure/ROA_2State', '-dpng', '-r600')

@@ -3,5 +3,4 @@
 
 addpath('models');
 addpath('functions');
-addpath('SDPOpt');
 addpath('utilities');

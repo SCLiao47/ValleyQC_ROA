@@ -26,10 +26,13 @@ opt.E0 = eye(3);
 opt.niter = 1;
 
 opt.options_Shape.Opt_ROA = func_getOptions_SDP_ROA(1,-3,200,-6,false);
-opt.options_Shape.verbose = 200;
+opt.options_Shape.verbose = true;
 
 %% run analysis
 new_exp = run_analysis(model, QCcases, opt);
 
 %% display result
-new_exp.r
+fprintf('[Analysis results]\n');
+for i = 1:length(ieQCs)
+    fprintf('- Set %i: r = %.4f \n', i, new_exp.r(i));
+end
