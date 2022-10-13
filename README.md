@@ -1,6 +1,6 @@
 # Quadratic Constraints for Local Stability Analysis of Quadratic Systems
 
-This repository contains the numerical results of paper "**Quadratic Constraints for Local Stability Analysis of Quadratic Systems**" by _Shih-Chi Liao, [Maziar S. Hemati](https://dept.aem.umn.edu/people/faculty/mhemati/index.html), [Peter Seiler](https://seiler.engin.umich.edu/)_ to be published at [IEEE Conference on Decision and Control 2022 in Cancun, Maxico](https://cdc2022.ieeecss.org/). You can find an [arXiv version](xxxxxx) of the publication here.
+This repository contains the numerical results of paper "**Quadratic Constraints for Local Stability Analysis of Quadratic Systems**" by _Shih-Chi Liao, [Maziar S. Hemati](https://dept.aem.umn.edu/people/faculty/mhemati/index.html), [Peter Seiler](https://seiler.engin.umich.edu/)_ to be published at [IEEE Conference on Decision and Control 2022 in Cancun, Maxico](https://cdc2022.ieeecss.org/). You can find an [arXiv version](https://arxiv.org/abs/2209.03565) of the publication here.
 
 ## Abstract
 
