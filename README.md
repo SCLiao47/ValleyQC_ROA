@@ -12,14 +12,14 @@ This paper proposes new quadratic constraints (QCs) to bound a quadratic polynom
 
 If you find this project is helpful, please cite the following reference:
 ```
-@misc{https://doi.org/10.48550/arxiv.2209.03565,
-  doi = {10.48550/ARXIV.2209.03565},
-  url = {https://arxiv.org/abs/2209.03565},
-  author = {Liao, Shih-Chi and Hemati, Maziar S. and Seiler, Peter},  
-  title = {Quadratic Constraints for Local Stability Analysis of Quadratic Systems},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@inproceedings{liao2022quadratic,
+  title={Quadratic constraints for local stability analysis of quadratic systems},
+  author={Liao, Shih-Chi and Hemati, Maziar S and Seiler, Peter},
+  booktitle={2022 IEEE 61st Conference on Decision and Control (CDC)},
+  pages={7053--7058},
+  year={2022},
+  organization={IEEE},
+  doi={10.1109/CDC51059.2022.9992343}
 }
 ```
 
